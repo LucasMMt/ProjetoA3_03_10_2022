@@ -17,6 +17,7 @@ func servidor() {
 		fmt.Println(err)
 		return
 	}
+	//loop for para Aceitar conexão
 	for {
 		c, err := s.Accept()
 		if err != nil {
@@ -34,10 +35,10 @@ func handleClient(c net.Conn) {
 		fmt.Println(err)
 		return
 	} else {
-		fmt.Println("Nome Do Aluno: ", aluno.Nome+"\n"+
-			" Primeira Nota: "+aluno.Nota[0]+"\n"+
-			" Segunda Nota: "+aluno.Nota[1]+"\n"+
-			" Terceira Nota: "+aluno.Nota[2])
+		fmt.Println("Servidor recebeu Dados de Cliente \nNome Do Aluno: ", aluno.Nome+"\n"+
+			"Primeira Nota: "+aluno.Nota[0]+"\n"+
+			"Segunda Nota: "+aluno.Nota[1]+"\n"+
+			"Terceira Nota: "+aluno.Nota[2])
 	}
 
 }

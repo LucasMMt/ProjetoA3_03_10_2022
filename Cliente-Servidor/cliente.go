@@ -7,6 +7,7 @@ import (
 	"strconv"
 )
 
+// uso de struct
 type Aluno struct {
 	Nome string
 	Nota []string
@@ -36,7 +37,7 @@ func soma(aluno Aluno) {
 	f2, err := strconv.ParseFloat(s2, 2)
 
 	f3, err := strconv.ParseFloat(s3, 2)
-	fmt.Println("Media da Nota :")
+	fmt.Println("Media das 3 notas :")
 	fmt.Println((f1 + f2 + f3) / 3)
 	if err != nil {
 		fmt.Println(err)
@@ -52,9 +53,11 @@ func main() {
 			"5.5",
 		},
 	}
+	fmt.Println("Cliente enviou dados do Aluno para o Servidor")
 	go soma(aluno)
 	go cliente(aluno)
 
+	//CTRL + C para sair
 	var input string
 	fmt.Scanln(&input)
 }
